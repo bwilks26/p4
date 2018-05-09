@@ -1,0 +1,13 @@
+body {
+    font-weight: 300;
+}
+
+input {
+    padding: 10px 2px;
+    margin: 10px;
+    width: 200px;
+}
+
+label {
+    margin: 10px;
+}

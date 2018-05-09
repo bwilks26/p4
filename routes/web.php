@@ -10,10 +10,39 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'ProductController@index');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+#Create
+Route::get('/product-add', 'ProductController@productMake');
+
+Route::post('/products', 'ProductController@productAdd');
+
+
+#Read
+Route::get('/dashboard', 'ProductController@dashboard');
+
+Route::get('/products', 'ProductController@productListing');
+
+Route::get('/product-search', 'ProductController@productSearch');
+
+
+#Update
+Route::get('/products/{id}/edit', 'ProductController@productEdit');
+
+Route::put('/products/{id}', 'ProductController@productUpdate');
+
+
+#Delete
+Route::delete('/products/{id}', 'ProductController@productDestroy');
+
+
+
+Route::get('/billsplitter', 'BillSplitterController@splitterForm');
+
+Route::get('/split-bill', 'BillSplitterController@splitBill');
+
+
+/*
 Route::get('/debug', function () {
 
     $debug = [
@@ -21,13 +50,13 @@ Route::get('/debug', function () {
         'Database defaultStringLength' => Illuminate\Database\Schema\Builder::$defaultStringLength,
     ];
 
-    /*
+
     The following commented out line will print your MySQL credentials.
     Uncomment this line only if you're facing difficulties connecting to the
     database and you need to confirm your credentials. When you're done
     debugging, comment it back out so you don't accidentally leave it
     running on your production server, making your credentials public.
-    */
+
     #$debug['MySQL connection config'] = config('database.connections.mysql');
 
     try {
@@ -40,3 +69,4 @@ Route::get('/debug', function () {
 
     dump($debug);
 });
+*/
