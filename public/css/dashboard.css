@@ -1,0 +1,17 @@
+.productCount, .needsUpdateCount, .readyForUseCount {
+    font-size: 20px;
+    text-align: right;
+    font-weight: bolder;
+}
+
+.productCount {
+    color: #337ab7;
+}
+
+.needsUpdateCount {
+    color: #8a6d3b;
+}
+
+.readyForUseCount {
+    color: #3c763d;
+}

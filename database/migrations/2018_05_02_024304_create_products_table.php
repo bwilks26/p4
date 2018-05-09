@@ -24,7 +24,6 @@ class CreateProductsTable extends Migration
             $table->integer('on_order');
             $table->float('price_per_unit', 10, 2);
             $table->float('total', 10, 2);
-            $table->string('status')->nullable(); # turn this into a pivot table relation
         });
     }
 

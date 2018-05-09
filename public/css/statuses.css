@@ -1,0 +1,54 @@
+.needsUpdate, .markedForDeletion, .inProgress, .readyForUse {
+    border-width: 1px;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+}
+
+
+.needsUpdate {
+    border-color: black;
+    background-color: yellow;
+    color: black;
+}
+
+.markedForDeletion {
+    border-color: darkred;
+    background-color: red;
+}
+
+.inProgress {
+    border-color: darkblue;
+    background-color: #2e6da4;
+}
+
+.readyForUse {
+    border-color: darkgreen;
+    background-color: green;
+}
+
+.inProgressCount, .needsUpdateCount, .readyForUseCount, .markedForDeletionCount {
+    font-size: 20px;
+    text-align: right;
+    font-weight: bolder;
+}
+
+.inProgressCount {
+    color: #2e6da4;
+}
+
+.needsUpdateCount {
+    color: #8a6d3b;
+}
+
+.readyForUseCount {
+    color: #3c763d;
+}
+
+.markedForDeletionCount {
+
+}
+
+
+
+

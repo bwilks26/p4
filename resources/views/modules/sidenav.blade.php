@@ -29,15 +29,11 @@
                 </li>
             </ul>
 
-            <li>
-                <a href="#">
-                    <i class="fa fa-user fa-lg"></i> Updates
-                </a>
-            </li>
+
 
             <li>
-                <a href="#">
-                    <i class="fa fa-user fa-lg"></i> Status Updates
+                <a href="/status-center">
+                    <i class="fa fa-info-circle fa-lg"></i> Status Center
                 </a>
             </li>
 

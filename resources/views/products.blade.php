@@ -15,24 +15,24 @@
 
                                 <label for='product_code'>Product Type:</label>
                                 <select name='product_code' id='product_code'>
-                                    <option value='ENGINES'>Engines</option>
-                                    <option value='COOLERS'>Coolers</option>
-                                    <option value='COMP'>Compressors</option>
-                                    <option value='PANELS'>Panels</option>
-                                    <option value='MOTORS'>Motors</option>
+                                    <option value='ENGINES' @if($productCode == 'ENGINES') selected='selected' @endif>Engines</option>
+                                    <option value='COOLERS' @if($productCode == 'COOLERS') selected='selected' @endif>Coolers</option>
+                                    <option value='COMP' @if($productCode == 'COMP') selected='selected' @endif >Compressors</option>
+                                    <option value='PANELS' @if($productCode == 'PANELS') selected='selected' @endif >Panels</option>
+                                    <option value='MOTORS' @if($productCode == 'MOTORS') selected='selected' @endif>Motors</option>
                                 </select>
 
                                 <label for='order_by'>Order By:</label>
                                 <select name='order_by' id='order_by'>
-                                    <option value='description'>Name</option>
-                                    <option value='item_number'>Item Number</option>
-                                    <option value='quantity'>Quantity</option>
-                                    <option value='price_per_unit'>Price per Unit</option>
-                                    <option value='total'>Total</option>
+                                    <option value='description' @if($orderBy == 'description') selected='selected' @endif>Name</option>
+                                    <option value='item_number' @if($orderBy == 'item_number') selected='selected' @endif>Item Number</option>
+                                    <option value='quantity' @if($orderBy == 'quantity') selected='selected' @endif>Quantity</option>
+                                    <option value='price_per_unit' @if($orderBy == 'price_per_unit') selected='selected' @endif >Price per Unit</option>
+                                    <option value='total' @if($orderBy == 'total') selected='selected' @endif >Total</option>
                                 </select>
 
 
-                                <input type='checkbox' name='most_recent'>
+                                <input type='checkbox' name='most_recent' @if($mostRecent) checked='checked' @endif>
                                 <label>show most recent</label>
                             </fieldset>
 
@@ -49,7 +49,7 @@
         <div class='row-fluid'>
             <div class='panel panel-default'>
 
-                <div class='panel-heading'>Product Search</div>
+                <div class='panel-heading'> @if($productCode) {{'Search Results for ' . $productCode}} @else {{'Search Results' }} @endif </div>
                 <div class='panel-body'>
 
 

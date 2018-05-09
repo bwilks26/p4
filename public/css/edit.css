@@ -2,7 +2,7 @@ body {
     font-weight: 300;
 }
 
-input {
+input[type=text], input[type=number] {
     padding: 10px 2px;
     margin: 10px;
     width: 200px;
@@ -10,4 +10,14 @@ input {
 
 label {
     margin: 10px;
+}
+
+.statusSelection {
+    font-weight: 400;
+    color: #31708f;
+    list-style-type: none;
+}
+
+li>label {
+    margin: 2px;
 }

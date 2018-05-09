@@ -11,6 +11,7 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
+        # Define products array as starting data for seeding products table
         $products = [
             ["ENGINES", 102486, "Engine, 3306TA 203HP (B-Model) Stripped", 37, 0, 32202, 1191474],
             ["ENGINES", 101183, "Engine, G855-C  188HP", 7, 0, 30600, 214200],
@@ -91,6 +92,7 @@ class ProductsTableSeeder extends Seeder
             ["MOTORS", 103070, "Motor, Electric 2HP 1800RPM 24VDC 56CZ", 1, 0, 906.91, 906.91]
         ];
 
+        # Create new products in database with starting data
         $count = count($products);
 
         foreach ($products as $key => $productInfo) {

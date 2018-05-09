@@ -18,7 +18,7 @@
                         <fieldset>
 
 
-
+                            <div class='col-lg-6'>
                             <table>
                                 <tr>
                                     <td>
@@ -111,7 +111,26 @@
                                     </td>
                                 </tr>
                             </table>
+                            </div>
 
+                            <div class='col-lg-6 '>
+                                <div class='panel panel-info'>
+
+                                    <div class='panel-heading'><h3>Status Selection</h3></div>
+                                    <div class='panel-body'>
+                                        <ul class='statusSelection'>
+                                            @foreach($statusSelection as $statusId => $statusCode)
+                                                <li>
+                                                    <label>
+                                                        <input type='checkbox' name='statusCodes[]' value='{{ $statusId }}'>
+                                                        {{ $statusCode }}
+                                                    </label>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </fieldset>
 
                         <input type='submit' value='Add Product' class='btn btn-primary btn-small'>

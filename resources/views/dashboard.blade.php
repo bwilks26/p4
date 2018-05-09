@@ -1,16 +1,20 @@
 @extends('layouts.master')
 
+@push('head')
+    <link href='/css/dashboard.css' type='text/css' rel='stylesheet'>
+@endpush
+
 
 @section('content')
 
     <div class='container'>
         <div class='row-fluid'>
             <div class='col-sm-4'>
-                <div class='panel panel-primary'>
+                <div class='panel panel-info'>
 
                     <div class='panel-heading'>Total Products</div>
                     <div class='panel-body'>
-                        4
+                        <div class='productCount'> {{ $products->count() }} </div>
                     </div>
                 </div>
             </div>
@@ -19,16 +23,16 @@
 
                     <div class='panel-heading'>Needs Update</div>
                     <div class='panel-body'>
-                        7
+                        <div class='needsUpdateCount'> {{ $needsUpdate }} </div>
                     </div>
                 </div>
             </div>
             <div class='col-sm-4'>
-                <div class='panel panel-info'>
+                <div class='panel panel-success'>
 
-                    <div class='panel-heading'>Total Updates</div>
+                    <div class='panel-heading'>Ready For Use</div>
                     <div class='panel-body'>
-                        1
+                        <div class='readyForUseCount'> {{ $readyForUse }} </div>
                     </div>
                 </div>
             </div>

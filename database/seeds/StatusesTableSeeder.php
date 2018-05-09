@@ -12,6 +12,7 @@ class StatusesTableSeeder extends Seeder
      */
     public function run()
     {
+        # Define starting status codes
         $statuses = ['Needs Update', 'In Progress', 'Ready For Use', 'Marked For Deletion'];
 
         foreach ($statuses as $statusItem) {
