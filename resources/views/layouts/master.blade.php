@@ -22,21 +22,21 @@
 
 <section class='content'>
     @if(session('alert'))
-    <div class='container'>
-        <div class='row-fluid'>
-            <div class='col-sm-12'>
-                <div class='flash'>{{ session('alert') }}</div>
+        <div class='container'>
+            <div class='row-fluid'>
+                <div class='col-sm-12'>
+                    <div class='flash'>{{ session('alert') }}</div>
+                </div>
             </div>
         </div>
-    </div>
     @elseif(session('alert-danger'))
-    <div class='container'>
-        <div class='row-fluid'>
-            <div class='col-sm-12'>
-                <div class='flash-danger'>{{ session('alert-danger') }}</div>
+        <div class='container'>
+            <div class='row-fluid'>
+                <div class='col-sm-12'>
+                    <div class='flash-danger'>{{ session('alert-danger') }}</div>
+                </div>
             </div>
         </div>
-    </div>
     @endif
     @yield('content')
 </section>
@@ -44,7 +44,6 @@
 <footer>
     &copy; {{ date('Y') }} Bryan Wilks
 </footer>
-
 
 
 @stack('body')

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Product;
 use App\Status;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -14,7 +14,6 @@ class ProductController extends Controller
     {
         return view('index');
     }
-
 
     # Dashboard View
     public function dashboard()
@@ -27,11 +26,13 @@ class ProductController extends Controller
         $needsUpdate = 0;
         $readyForUse = 0;
 
-        foreach($products as $product) {
-            foreach($product->statuses as $status) {
-
-                if ($status->status_code == 'Needs Update') { $needsUpdate++; }
-                else if ($status->status_code == 'Ready For Use') { $readyForUse++; }
+        foreach ($products as $product) {
+            foreach ($product->statuses as $status) {
+                if ($status->status_code == 'Needs Update') {
+                    $needsUpdate++;
+                } else if ($status->status_code == 'Ready For Use') {
+                    $readyForUse++;
+                }
             }
         }
 
@@ -43,7 +44,6 @@ class ProductController extends Controller
         ]);
     }
 
-
     # Products page with search results
     public function productListing(Request $request)
     {
@@ -53,7 +53,6 @@ class ProductController extends Controller
         $mostRecent = $request->session()->get('mostRecent');
         $orderBy = $request->session()->get('orderBy');
 
-
         return view('products')->with([
             'products' => $products,
             'productCode' => $productCode,
@@ -62,12 +61,9 @@ class ProductController extends Controller
         ]);
     }
 
-
     # Product Search functionality returning to /products
     public function productSearch(Request $request)
     {
-
-
         # Extract relevant search terms from request
         $productCode = $request->input('product_code');
         $orderBy = $request->input('order_by');
@@ -84,11 +80,9 @@ class ProductController extends Controller
             'products' => $products,
             'productCode' => $productCode,
             'orderBy' => $orderBy,
-            'mostRecent'=> $mostRecent
+            'mostRecent' => $mostRecent
         ]);
-
     }
-
 
     # Functionality for editing a product upon 'edit' action in table
     public function productEdit($id)
@@ -99,7 +93,7 @@ class ProductController extends Controller
         $statuses = Status::orderBy('status_code')->get();
         $statusSelection = [];
 
-        foreach($statuses as $status) {
+        foreach ($statuses as $status) {
             $statusSelection[$status->id] = $status->status_code;
         }
 
@@ -108,14 +102,11 @@ class ProductController extends Controller
             'statusSelection' => $statusSelection,
             'statuses' => $product->statuses()->pluck('statuses.status_code')->toArray()
         ]);
-
     }
-
 
     # Update product in database after edit
     public function productUpdate(Request $request, $id)
     {
-
         $this->validate($request, [
             'description' => 'required',
             'quantity' => 'required|numeric',
@@ -137,9 +128,7 @@ class ProductController extends Controller
         return redirect('/products/' . $id . '/edit')->with([
             'alert' => 'Your changes have been saved.'
         ]);
-
     }
-
 
     # Functionality for deleting a product after confirmation
     public function productDestroy($id)
@@ -152,10 +141,9 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect('/products')->with([
-            'alert' => '"'.$product->description.'" was removed.'
+            'alert' => '"' . $product->description . '" was removed.'
         ]);
     }
-
 
     # Functionality for creation of a new product
     public function productMake(Request $request)
@@ -164,7 +152,7 @@ class ProductController extends Controller
         $statuses = Status::orderBy('status_code')->get();
         $statusSelection = [];
 
-        foreach($statuses as $status) {
+        foreach ($statuses as $status) {
             $statusSelection[$status->id] = $status->status_code;
         }
 
@@ -173,11 +161,9 @@ class ProductController extends Controller
         ]);
     }
 
-
     # Adding the new product to the database after creation
     public function productAdd(Request $request)
     {
-
         $this->validate($request, [
             'item_number' => 'required|numeric',
             'description' => 'required',
@@ -187,8 +173,7 @@ class ProductController extends Controller
         ]);
 
         # Handle if product item_number already exists in database
-        if (count(Product::where('item_number', '=', $request->item_number)->get()) > 0)
-        {
+        if (count(Product::where('item_number', '=', $request->item_number)->get()) > 0) {
             return redirect('product-add')->with([
                 'alert-danger' => 'Product ID already exists in database.'
             ]);
@@ -212,7 +197,6 @@ class ProductController extends Controller
         ]);
     }
 
-
     # Return products with appropriate status codes to Status Center
     public function statusListing(Request $request)
     {
@@ -230,13 +214,17 @@ class ProductController extends Controller
         $inProgress = 0;
         $markedForDeletion = 0;
 
-        foreach($productStatuses as $product) {
-            foreach($product->statuses as $status) {
-
-                if ($status->status_code == 'Needs Update') { $needsUpdate++; }
-                else if ($status->status_code == 'Ready For Use') { $readyForUse++; }
-                else if ($status->status_code == 'In Progress') { $inProgress++; }
-                else if ($status->status_code == 'Marked For Deletion') { $markedForDeletion++; }
+        foreach ($productStatuses as $product) {
+            foreach ($product->statuses as $status) {
+                if ($status->status_code == 'Needs Update') {
+                    $needsUpdate++;
+                } else if ($status->status_code == 'Ready For Use') {
+                    $readyForUse++;
+                } else if ($status->status_code == 'In Progress') {
+                    $inProgress++;
+                } else if ($status->status_code == 'Marked For Deletion') {
+                    $markedForDeletion++;
+                }
             }
         }
 
@@ -263,7 +251,6 @@ class ProductController extends Controller
 
         $products = Product::with('statuses')->where('product_code', '=', $productCode)->orderBy($orderBy)->get();
 
-
         # Limit results if necessary
         if ($mostRecent) {
             $products = $products->sortByDesc('updated_at')->take(5);
@@ -275,8 +262,6 @@ class ProductController extends Controller
             'orderBy' => $orderBy,
             'mostRecent' => $mostRecent
         ]);
-
     }
-
 
 }

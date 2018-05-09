@@ -46,25 +46,25 @@
                 <div class='panel-heading'>Recent Products</div>
                 <div class='panel-body'>
 
-                @if(count($recentProducts) > 0)
-                    <table class='table table-hover'>
-                        <tr>
-                            <th>Product</th>
-                            <th>Quantity</th>
-                            <th>Price per Unit</th>
-                        </tr>
-
-                        @foreach($recentProducts as $product)
+                    @if(count($recentProducts) > 0)
+                        <table class='table table-hover'>
                             <tr>
-                                <td> {{ $product->description }} </td>
-                                <td> {{ $product->quantity }} </td>
-                                <td> {{ $product->price_per_unit }} </td>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Price per Unit</th>
                             </tr>
-                        @endforeach
-                    </table>
-                @else
-                    <h2>No recent products</h2>
-                @endif
+
+                            @foreach($recentProducts as $product)
+                                <tr>
+                                    <td> {{ $product->description }} </td>
+                                    <td> {{ $product->quantity }} </td>
+                                    <td> {{ $product->price_per_unit }} </td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    @else
+                        <h2>No recent products</h2>
+                    @endif
 
                 </div>
             </div>

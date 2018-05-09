@@ -30,7 +30,6 @@
             </ul>
 
 
-
             <li>
                 <a href="/status-center">
                     <i class="fa fa-info-circle fa-lg"></i> Status Center

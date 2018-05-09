@@ -1,59 +1,57 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Project 4
++ By: *Bryan Wilks*
++ Production URL: <http://p4.bryanwilksharvard.club>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Database
+*The following is example info taken from Foobooks; delete and replace with your own info.*
 
-## About Laravel
+Primary tables:
+  + `products`
+  + `statuses`
+  + `users`
+  
+Pivot table(s):
+  + `product_status`
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## CRUD
+*After logging in at <http://p4.bryanwilksharvard.club> with the seeded logins (jill@harvard.edu or jamal@harvard.edu), these 4 CRUD operations can be viewed:
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+__Create__
+  + Visit <http://p4.bryanwilksharvard.club/product-add>
+  + Fill out form
+  + Click *Add product*
+  + Observe confirmation message
+  
+__Read__
+  + Visit <http://p4.bryanwilksharvard.club/products> and Click *Search* to see a listing of all products by product type
+  + Visit <http://p4.bryanwilksharvard.club/status-center> and Click *Search* to see a listing of all products with statuses by product type
+  + Visit <http://p4.bryanwilksharvard.club/dashboard> to see a listing of the most recently updated/added products and to see quickview statistics.
+  
+__Update__
+  + Visit <http://p4.bryanwilksharvard.club/products> and Click *Search* to see a listing of all products by product type, or visit <http://p4.bryanwilksharvard.club/status-center> and Click *Search* to see a listing of all products with statuses by product type 
+  + choose the Edit action at the end of one of the product results
+  + Make some edit to form
+  + Click *Edit Product*
+  + Observe confirmation message
+  
+__Delete__
+  + Visit <http://p4.bryanwilksharvard.club/products> and Click *Search* to see a listing of all products by product type
+  + choose the 'X' at the end of one of the product results, meaning delete
+  + Confirm deletion
+  + Observe confirmation message
 
-## Learning Laravel
+## Outside resources
+  + Login Modal reference: <https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form_modal>
+  + Foobooks reference: <https://github.com/susanBuck/foobooks>
+  + Modal functionality: <https://w3schools.com/bootstrap/bootstrap_modal.asp>
+  + Responsive Navigation Menu reference and style help: <https://bootsnipp.com/snippets/featured/responsive-navigation-menu>
+  + Modal data-passing reference: <https://stackoverflow.com/questions/27027186/php-how-to-put-and-pass-variable-in-modal-url>
+  
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+## Code style divergences
+*Followed PSR-1/PSR-2 and course guidelines on code style to the best of my ability, trying to be meticulous about syntax and design decisions. Any minor divergences were meant to help the specific section for readability/usability.*
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Notes for instructor
+ + The CG portal itself features a product listing system with quick view data on statuses of products. The functionality of the portal lies inits ability to quickly show products based on a number of selected criteria, and also to be able to apply status codes to products for users to be able to keep track of product statuses and apply maintenance/update products when necessary.
+ + The CG_Player_logo.png refuses to load in the production environment, even though it loads in development and it is in the Github repository and on my production server. It is by no means a crucial piece and it just aesthetic, but spent way too long trying to debug it with no avail.

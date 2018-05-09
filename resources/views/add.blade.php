@@ -19,98 +19,98 @@
 
 
                             <div class='col-lg-6'>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <label>Item Number:</label>
-                                    </td>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label>Item Number:</label>
+                                        </td>
 
-                                    <td>
-                                        <input type='number'
-                                               name='item_number'
-                                               value='{{ old('item_number') }}'
-                                               placeholder='Required*'/>
-                                    </td>
-                                    <td>
-                                        @include('modules.error-field', ['field' => 'item_number'])
-                                    </td>
+                                        <td>
+                                            <input type='number'
+                                                   name='item_number'
+                                                   value='{{ old('item_number') }}'
+                                                   placeholder='Required*'/>
+                                        </td>
+                                        <td>
+                                            @include('modules.error-field', ['field' => 'item_number'])
+                                        </td>
 
-                                <tr>
-                                <tr>
-                                    <td>
-                                        <label>Description:</label>
-                                    </td>
+                                    <tr>
+                                    <tr>
+                                        <td>
+                                            <label>Description:</label>
+                                        </td>
 
-                                    <td>
-                                        <input type='text'
-                                               name='description'
-                                               value='{{ old('description') }}'
-                                               placeholder='Required*'/>
-                                    </td>
-                                    <td>
-                                        @include('modules.error-field', ['field' => 'description'])
-                                    </td>
+                                        <td>
+                                            <input type='text'
+                                                   name='description'
+                                                   value='{{ old('description') }}'
+                                                   placeholder='Required*'/>
+                                        </td>
+                                        <td>
+                                            @include('modules.error-field', ['field' => 'description'])
+                                        </td>
 
-                                <tr>
-                                    <td>
-                                        <label>Quantity:</label>
-                                    </td>
-                                    <td>
-                                        <input type='number'
-                                               name='quantity'
-                                               value='{{ old('quantity') }}'
-                                               placeholder='Required*'/>
-                                    </td>
-                                    <td>
-                                        @include('modules.error-field', ['field' => 'quantity'])
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>On Order:</label>
-                                    </td>
+                                    <tr>
+                                        <td>
+                                            <label>Quantity:</label>
+                                        </td>
+                                        <td>
+                                            <input type='number'
+                                                   name='quantity'
+                                                   value='{{ old('quantity') }}'
+                                                   placeholder='Required*'/>
+                                        </td>
+                                        <td>
+                                            @include('modules.error-field', ['field' => 'quantity'])
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>On Order:</label>
+                                        </td>
 
-                                    <td>
-                                        <input type='number'
-                                               name='on_order'
-                                               value='{{ old('on_order') }}'
-                                               placeholder='Required*'/>
-                                    </td>
-                                    <td>
-                                        @include('modules.error-field', ['field' => 'on_order'])
-                                    </td>
+                                        <td>
+                                            <input type='number'
+                                                   name='on_order'
+                                                   value='{{ old('on_order') }}'
+                                                   placeholder='Required*'/>
+                                        </td>
+                                        <td>
+                                            @include('modules.error-field', ['field' => 'on_order'])
+                                        </td>
 
-                                <tr>
-                                <tr>
-                                    <td>
-                                        <label>Price Per Unit:</label>
-                                    </td>
-                                    <td>
-                                        <input type='number'
-                                               name='price_per_unit'
-                                               value='{{ old('price_per_unit') }}'
-                                               placeholder='Required*'/>
-                                    </td>
-                                    <td>
-                                        @include('modules.error-field', ['field' => 'price_per_unit'])
-                                    </td>
-                                </tr>
+                                    <tr>
+                                    <tr>
+                                        <td>
+                                            <label>Price Per Unit:</label>
+                                        </td>
+                                        <td>
+                                            <input type='number'
+                                                   name='price_per_unit'
+                                                   value='{{ old('price_per_unit') }}'
+                                                   placeholder='Required*'/>
+                                        </td>
+                                        <td>
+                                            @include('modules.error-field', ['field' => 'price_per_unit'])
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td>
-                                        <label for='product_code'>Product Type:</label>
-                                    </td>
-                                    <td>
-                                        <select name='product_code' id='product_code'>
-                                            <option value='ENGINES' selected >Engines</option>
-                                            <option value='COOLERS'  > Coolers</option>
-                                            <option value='COMP'  >Compressors</option>
-                                            <option value='PANELS' >Panels</option>
-                                            <option value='MOTORS' >Motors</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                            </table>
+                                    <tr>
+                                        <td>
+                                            <label for='product_code'>Product Type:</label>
+                                        </td>
+                                        <td>
+                                            <select name='product_code' id='product_code'>
+                                                <option value='ENGINES' selected>Engines</option>
+                                                <option value='COOLERS'> Coolers</option>
+                                                <option value='COMP'>Compressors</option>
+                                                <option value='PANELS'>Panels</option>
+                                                <option value='MOTORS'>Motors</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
 
                             <div class='col-lg-6 '>
@@ -122,7 +122,9 @@
                                             @foreach($statusSelection as $statusId => $statusCode)
                                                 <li>
                                                     <label>
-                                                        <input type='checkbox' name='statusCodes[]' value='{{ $statusId }}'>
+                                                        <input type='checkbox'
+                                                               name='statusCodes[]'
+                                                               value='{{ $statusId }}'>
                                                         {{ $statusCode }}
                                                     </label>
                                                 </li>
